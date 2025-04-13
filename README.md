@@ -42,6 +42,11 @@ This project is the backend Flask application for an AI-powered interview simula
 - **PDF Parsing:** pdfplumber
 - **Dependencies:** See `requirements.txt` for the full list.
 
+## Utility Services
+
+- [KnowledgeBase](https://github.com/zarouz/KnowledgeBase.git): Setting up Postgress DB for RAG
+
+
 ## Setup and Installation
 
 1.  **Clone the Repository:**
