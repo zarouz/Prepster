@@ -45,6 +45,8 @@ This project is the backend Flask application for an AI-powered interview simula
 ## Utility Services
 
 - [KnowledgeBase](https://github.com/zarouz/KnowledgeBase.git): Setting up Postgress DB for RAG
+- [EmotionalAnalysis_API](https://github.com/zarouz/EmotionalAnalysis_API.git): ML Service to gauge user's emotions based on audio
+- [NeuroSync](https://github.com/AnimaVR/NeuroSync_Player.git): Connecting to 3-D avatar
 
 
 ## Setup and Installation
