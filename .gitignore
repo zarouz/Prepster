@@ -6,7 +6,7 @@ venv/
 __pycache__/
 *.py[cod]
 *.so
-temp. text
+temp.txt
 venv-genai
 # Ignore environment variables
 .env
@@ -30,6 +30,7 @@ htmlcov/
 
 # Sensitive files
 code.txt
+
 
 # Generated files/directories
 reports/
