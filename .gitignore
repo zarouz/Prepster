@@ -27,3 +27,11 @@ htmlcov/
 *.swp
 *.bak
 *.tmp
+
+# Sensitive files
+code.txt
+
+# Generated files/directories
+reports/
+temp_uploads/
+*.session.sql
