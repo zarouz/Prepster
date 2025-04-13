@@ -1,0 +1,28 @@
+# Ignore Python virtual environment
+.venv/
+venv/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+*.so
+temp. text
+# Ignore environment variables
+.env
+
+# Ignore VS Code settings
+.vscode/
+
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore logs and coverage
+*.log
+coverage/
+htmlcov/
+
+# Ignore temporary files
+*.swp
+*.bak
+*.tmp
