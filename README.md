@@ -14,7 +14,7 @@ This project is the backend Flask application for an AI-powered interview simula
 - **AI-Powered Interviewer:**
   - Generates relevant interview questions (technical, scenario-based, project-specific) using configured Google Gemini LLMs.
   - Conducts a conversational interview flow, asking prepared questions and dynamic, relevant follow-up questions based on the candidate's responses.
-  - Integrates with RAG (Retrieval-Augmented Generation) using a PostgreSQL/pgvector knowledge base for context-aware questions (optional, configurable).
+  - Integrates with RAG (Retrieval-Augmented Generation) using a PostgreSQL/pgvector knowledge base for context-aware questions (optional, configurable). https://github.com/zarouz/KnowledgeBase.git
 - **Audio Processing:**
   - Accepts audio responses (e.g., WAV, WebM, Ogg) from the candidate via file upload.
   - Transcribes audio using Google Cloud Speech-to-Text, handling various encodings.
