@@ -4,6 +4,12 @@
 
 This project is the backend Flask application for an AI-powered interview simulator. It allows users to register, log in, and participate in simulated job interviews tailored to a specific role based on their resume and a provided job description. The AI interviewer asks questions, processes the candidate's audio responses, evaluates them, and generates a comprehensive feedback report.
 
+## Utility Services
+
+- [KnowledgeBase](https://github.com/zarouz/KnowledgeBase.git): Setting up Postgress DB for RAG
+- [EmotionalAnalysis_API](https://github.com/zarouz/EmotionalAnalysis_API.git): ML Service to gauge user's emotions based on audio
+- [NeuroSync](https://github.com/AnimaVR/NeuroSync_Player.git): Connecting to 3-D avatar
+
 ## Features
 
 - **User Authentication:** Secure registration, login, logout, email confirmation, and password reset functionality using Flask-Login, Flask-Bcrypt, and Flask-Mail.
@@ -41,13 +47,6 @@ This project is the backend Flask application for an AI-powered interview simula
 - **PDF Generation:** ReportLab
 - **PDF Parsing:** pdfplumber
 - **Dependencies:** See `requirements.txt` for the full list.
-
-## Utility Services
-
-- [KnowledgeBase](https://github.com/zarouz/KnowledgeBase.git): Setting up Postgress DB for RAG
-- [EmotionalAnalysis_API](https://github.com/zarouz/EmotionalAnalysis_API.git): ML Service to gauge user's emotions based on audio
-- [NeuroSync](https://github.com/AnimaVR/NeuroSync_Player.git): Connecting to 3-D avatar
-
 
 ## Setup and Installation
 
