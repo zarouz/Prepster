@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Interview Simulation</title>
+    <!-- Link to your CSS file -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>AI Interview Simulation</h1>
+      <!-- Optional: Add logo or other header elements -->
+    </header>
+
+    <main class="interview-container">
+      <!-- Section for the Pixel Streaming Avatar -->
+      <section class="avatar-section">
+        <h2>Interviewer Avatar</h2>
+        <div class="avatar-stream-wrapper">
+          <iframe
+            id="pixelStreamerFrame"
+            src="http://127.0.0.1/"
+            class="avatar-stream-iframe"
+            frameborder="0"
+            allow="autoplay"
+            title="Pixel Streaming Avatar"
+          >
+            <!-- Fallback content -->
+            Pixel Stream unavailable or not supported by your browser. Ensure
+            Unreal Engine stream is running at http://127.0.0.1/
+          </iframe>
+        </div>
+      </section>
+
+      <!-- Section for Interview Interaction -->
+      <section class="interaction-section">
+        <h2>Interview</h2>
+
+        <!-- File Upload Form (Initially Visible) -->
+        <form id="startForm">
+          <h3>Setup Interview</h3>
+          <div>
+            <label for="resume">Upload Resume (PDF):</label>
+            <input
+              type="file"
+              id="resume"
+              name="resume"
+              accept=".pdf"
+              required
+            />
+          </div>
+          <div>
+            <label for="job_description">Paste Job Description:</label><br />
+            <textarea
+              id="job_description"
+              name="job_description"
+              rows="8"
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Start Interview</button>
+        </form>
+
+        <!-- Interview Controls (Initially Hidden or Disabled) -->
+        <div id="interviewControls" style="display: none">
+          <h3>Conversation</h3>
+          <div id="aiMessageText" class="message-display">
+            Waiting for interview to start...
+          </div>
+
+          <div id="controls">
+            <button id="recordButton" disabled>Start Recording Answer</button>
+            <button id="stopButton" disabled>Stop Recording</button>
+            <button id="getReportButton" disabled>Get Interview Report</button>
+            <p id="status">Status: Idle</p>
+            <div id="errorDisplay" class="error-message"></div>
+            <audio
+              id="audioPlayback"
+              controls
+              style="display: none; margin-top: 10px"
+            ></audio>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <!-- Optional footer content -->
+    </footer>
+
+    <!-- Link to your JavaScript file -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

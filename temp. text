@@ -1,0 +1,6 @@
+flask cleanup-unconfirmed-users
+Important: For this cleanup to happen automatically,
+ you need to set up a scheduler (like cron on macOS/Linux or Task Scheduler on Windows) 
+ to run the flask cleanup-unconfirmed-users command periodically 
+ (e.g., every minute or every 5 minutes).
+  This setup is outside the scope of the application code itself.

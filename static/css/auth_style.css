@@ -1,0 +1,180 @@
+/* static/css/auth_style.css */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8f9fa; /* Light grey background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #343a40; /* Darker text color */
+}
+
+.auth-container {
+    max-width: 420px;
+    width: 100%;
+    margin: 30px;
+    padding: 35px 40px; /* Slightly more padding */
+    border: 1px solid #dee2e6; /* Lighter border */
+    border-radius: 8px;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Softer shadow */
+}
+
+.auth-container h1 {
+    text-align: center;
+    margin-bottom: 15px; /* Reduced margin */
+    font-size: 1.8em; /* Slightly larger heading */
+    font-weight: 600;
+    color: #333;
+}
+
+.auth-container p {
+    text-align: center;
+    margin-bottom: 25px; /* Space below introductory paragraph */
+    color: #6c757d; /* Grey text */
+    font-size: 0.95em;
+}
+
+
+.form-group {
+    margin-bottom: 20px; /* Increased spacing between fields */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px; /* Increased space below label */
+    font-weight: 600; /* Bolder labels */
+    font-size: 0.9em;
+    color: #495057;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px; /* Increased padding */
+    border: 1px solid #ced4da; /* Standard border */
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-group input:focus {
+    border-color: #5cb85c; /* Accent color on focus */
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(92, 184, 92, 0.25); /* Focus glow */
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8em;
+    color: #6c757d;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-check input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto; /* Override full width */
+    flex-shrink: 0; /* Prevent checkbox from shrinking */
+    height: 1em; /* Align better with text */
+    width: 1em;
+}
+ .form-check label {
+     margin-bottom: 0; /* Remove bottom margin */
+     font-weight: normal;
+     color: #495057;
+     font-size: 0.95em;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 12px 18px; /* Larger buttons */
+    border: none;
+    border-radius: 5px; /* Slightly more rounded */
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 600; /* Bolder button text */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: #5cb85c; /* Green accent */
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #4cae4c; /* Darker green on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-block {
+    width: 100%; /* Make button full width */
+    display: block;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef; /* Separator line */
+}
+
+.auth-links p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.auth-links a {
+    color: #5cb85c; /* Accent color for links */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+    color: #4cae4c;
+}
+
+/* Flash Messages */
+.flash-messages {
+    margin-bottom: 20px;
+    width: 100%;
+}
+.alert {
+    padding: 12px 18px;
+    margin-bottom: 15px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 0.95em;
+    position: relative; /* For potential close buttons later */
+    opacity: 0.95;
+}
+.alert-success { color: #155724; background-color: #d4edda; border-color: #c3e6cb; }
+.alert-danger { color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; }
+.alert-warning { color: #856404; background-color: #fff3cd; border-color: #ffeeba; }
+.alert-info { color: #0c5460; background-color: #d1ecf1; border-color: #bee5eb; }
+
+/* Responsive adjustments (optional) */
+@media (max-width: 480px) {
+    .auth-container {
+        margin: 15px;
+        padding: 25px 20px;
+    }
+    .auth-container h1 {
+        font-size: 1.6em;
+    }
+}

@@ -1,0 +1,162 @@
+/* General Body Styling (Example) */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+main {
+    max-width: 1400px; /* Adjust max width as needed */
+    margin: 20px auto; /* Center the main content */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+/* Core Layout Styling */
+.interview-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px; /* Space between avatar and interaction sections */
+}
+
+.avatar-section {
+    flex: 1; /* Allows it to grow/shrink */
+    min-width: 400px; /* Minimum width before wrapping */
+    /* You might want a max-width too */
+    /* max-width: 700px; */
+}
+
+.interaction-section {
+    flex: 1; /* Allows it to grow/shrink */
+    min-width: 400px; /* Minimum width */
+}
+
+/* Styling for the Avatar Stream Wrapper and Iframe */
+.avatar-stream-wrapper {
+    width: 100%;
+    /* Maintain aspect ratio (e.g., 16:9) */
+    /* padding-top: 56.25%; /* 9 / 16 * 100% */
+    /* position: relative; */
+    /* Alternatively, set fixed height: */
+    height: 480px; /* Example fixed height */
+    background-color: #000; /* Black background while loading */
+    border: 1px solid #ccc;
+    overflow: hidden; /* Hide anything outside the border */
+}
+
+.avatar-stream-iframe {
+    /* If using aspect ratio padding-top: */
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    width: 100%;
+    height: 100%;
+    border: none; /* Redundant with wrapper border */
+}
+
+/* Styling for Interaction Section Elements */
+#startForm div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="file"],
+textarea {
+    width: 95%; /* Adjust width */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#controls {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.message-display {
+    min-height: 100px;
+    border: 1px solid #e0e0e0;
+    background-color: #f8f8f8;
+    padding: 15px;
+    margin-bottom: 20px;
+    white-space: pre-wrap; /* Respect newlines from AI */
+    font-size: 1.1em;
+    border-radius: 4px;
+}
+
+#status {
+    margin-top: 15px;
+    font-style: italic;
+    color: #666;
+}
+
+.error-message {
+    color: #d9534f; /* Red color for errors */
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#audioPlayback {
+    width: 100%;
+    margin-top: 15px;
+}
+
+
+/* Responsive adjustments (Example) */
+@media (max-width: 800px) {
+    .interview-container {
+        flex-direction: column; /* Stack elements vertically */
+    }
+    .avatar-section, .interaction-section {
+        min-width: 100%; /* Take full width when stacked */
+    }
+    .avatar-stream-wrapper {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+}

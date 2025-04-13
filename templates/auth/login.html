@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - AI Interview</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/base_style.css') }}"> -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/auth_style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="auth-container">
+      <h1>Welcome Back!</h1>
+      <p>Log in to access your interviews.</p>
+
+      <!-- Flash Messages -->
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+          {{ message | safe }} {# Check if the message indicates an unconfirmed
+          account #} {% if 'Account not confirmed' in message %}
+          <form
+            method="POST"
+            action="{{ url_for('auth.resend_confirmation_email') }}"
+            style="display: inline; margin-left: 10px"
+          >
+            {# Use the email submitted in the login form #}
+            <input
+              type="hidden"
+              name="email"
+              value="{{ request.form.email or '' }}"
+            />
+            <button type="submit" class="btn-link">
+              Resend confirmation email?
+            </button>
+          </form>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %} {% endwith %}
+      <!-- End Flash Messages -->
+
+      <form method="POST" action="{{ url_for('auth.login') }}" novalidate>
+        {# {{ form.csrf_token }} #}
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value="{{ request.form.email or '' }}"
+            required
+            autofocus
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <div class="form-group form-check">
+          <input type="checkbox" id="remember" name="remember" value="y" /> {#
+          Add value="y" or similar #}
+          <label for="remember">Remember Me</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+
+      <div class="auth-links">
+        <p>
+          <a href="{{ url_for('auth.reset_password_request') }}"
+            >Forgot Password?</a
+          >
+        </p>
+        <p>
+          Don't have an account?
+          <a href="{{ url_for('auth.register') }}">Register here</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - AI Interview</title>
+    <!-- Link to shared base CSS (optional) -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/base_style.css') }}"> -->
+    <!-- Link to specific auth CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/auth_style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="auth-container">
+      <h1>Create Your Account</h1>
+
+      <!-- Flash Messages -->
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">{{ message | safe }}</div>
+        {# Use |safe if flashing HTML like links #} {% endfor %}
+      </div>
+      {% endif %} {% endwith %}
+      <!-- End Flash Messages -->
+
+      <form method="POST" action="{{ url_for('auth.register') }}" novalidate>
+        {# Include CSRF token if using Flask-WTF #} {# {{ form.csrf_token }} #}
+
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value="{{ request.form.username or '' }}"
+            required
+          />
+          {# Example WTForms error display #} {# {% if form.username.errors %}
+          <ul class="errors">
+            {% for error in form.username.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %} #}
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value="{{ request.form.email or '' }}"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+          <small>Password must be at least 8 characters long.</small> {# Add
+          hints if needed #}
+        </div>
+
+        <div class="form-group">
+          <label for="confirm_password">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm_password"
+            name="confirm_password"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          Register
+        </button>
+      </form>
+
+      <div class="auth-links">
+        <p>
+          Already have an account?
+          <a href="{{ url_for('auth.login') }}">Login here</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
